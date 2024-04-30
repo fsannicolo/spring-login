@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Dettagli utente</title>
+</head>
+<body>
+    <div class="col-3">
+
+        <div th:if="${user.name != null && user.surname != null}">
+            <h3 th:text="'Benvenuto, ' + ${user.name + ' ' + user.surname}"></h3>
+
+            <div>
+                <b>Username: </b><span th:text="${user.username}"></span>
+            </div>
+
+            <div>
+                <b>Email: </b><span th:text="${user.email}"></span>
+            </div>
+        </div>
+
+        <div th:unless="${user.name != null || user.surname != null}">
+            <h3 th:text="'Bentornato, ' + ${user.username}"></h3>
+        </div>
+
+        <br>
+        <div>
+            <a class="btn btn-primary" th:href="@{/}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
