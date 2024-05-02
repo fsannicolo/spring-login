@@ -11,7 +11,7 @@
             <h2>Nuovo utente</h2>
         </div>
         <div class="col-3">
-            <form method="post" th:action="@{/user/new}" th:object="${userForm}" modelAttribute="newUser">
+            <form method="post" th:action="@{/user/new}" th:object="${userForm}">
             <div>
                     <label>Nome</label>
                     <br>
@@ -43,7 +43,7 @@
             </div>
             <br>
                 <div>
-                    <input class="btn btn-primary" type="submit" value="Accedi"/>
+                    <input class="btn btn-primary" type="submit" value="Crea account"/>
                     <a class="btn btn-secondary" th:href="@{/}">Home</a>
                 </div>
 

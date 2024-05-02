@@ -11,7 +11,7 @@
         <h1>Login</h1>
 
         <div class="col-3">
-            <form method="post" th:action="@{/user/new}" th:object="${userForm}" modelAttribute="newUser">
+            <form method="post" th:action="@{/user/login}" th:object="${userForm}">
             
                <div>
                     <label>Username</label>
@@ -26,11 +26,17 @@
                </div>
                <br>
                 <div>
-                    <input class="btn btn-primary" type="submit" value="Crea account"/>
+                    <input class="btn btn-primary" type="submit" value="Accedi"/>
                     <a class="btn btn-secondary" th:href="@{/}">Home</a>
                 </div>
     
             </form>
+        </div>
+
+        <div class="col-3 my-2">
+            <div class="alert alert-danger" role="alert" th:if="${notfound != null}"> 
+                Username non esiste!
+            </div>
         </div>
     </div>
 </body>

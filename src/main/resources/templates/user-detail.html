@@ -9,7 +9,7 @@
 <body>
     <div class="col-3">
 
-        <div th:if="${user.name != null && user.surname != null}">
+        <div>
             <h3 th:text="'Benvenuto, ' + ${user.name + ' ' + user.surname}"></h3>
 
             <div>
@@ -19,10 +19,6 @@
             <div>
                 <b>Email: </b><span th:text="${user.email}"></span>
             </div>
-        </div>
-
-        <div th:unless="${user.name != null || user.surname != null}">
-            <h3 th:text="'Bentornato, ' + ${user.username}"></h3>
         </div>
 
         <br>
